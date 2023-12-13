@@ -54,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const firstName = form.first.value.trim(); //trim() enlève les espaces inutiles des valeurs des champs du formulaire
     const lastName = form.last.value.trim();
     const email = form.email.value.trim();
+    const birthdate = form.birthdate.value;
     const quantity = form.quantity.value.trim();
     const location = form.querySelector('input[name="location"]:checked');
     const checkbox1 = form.checkbox1;
@@ -62,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const isFirstNameValid = firstName.length >= 2 && !firstName == "";
     const isLastNameValid = lastName.length >= 2 && !lastName == "";
     const isEmailValid = validateEmail(email);
+    const isBirthdateValid = !isNaN(Date.parse(birthdate));
     const isQuantityValid = !isNaN(quantity) && quantity >= 0 && !quantity == "";
     const isLocationValid = location !== null;
     const isCheckbox1Valid = checkbox1.checked;
@@ -90,12 +92,13 @@ document.addEventListener("DOMContentLoaded", function () {
     displayError(form.first, "Le champ Prénom doit avoir au moins 2 caractères.", isFirstNameValid);
     displayError(form.last, "Le champ Nom doit avoir au moins 2 caractères.", isLastNameValid);
     displayError(form.email, "Veuillez saisir une adresse e-mail valide.", isEmailValid);
+    displayError(form.birthdate, "Veuillez saisir votre date de naissance.", isBirthdateValid);
     displayError(form.quantity, "Veuillez saisir un nombre valide pour le nombre de concours.", isQuantityValid);
     displayError(form.querySelector(".location"), "Veuillez sélectionner une ville.", isLocationValid);
     displayError(form.checkbox1, "Veuillez accepter les conditions d'utilisation.", isCheckbox1Valid);
 
     // Retourne true si toutes les conditions sont remplies, sinon false
-    return isFirstNameValid && isLastNameValid && isEmailValid && isQuantityValid && isLocationValid && isCheckbox1Valid;
+    return isFirstNameValid && isLastNameValid && isEmailValid && isBirthdateValid && isQuantityValid && isLocationValid && isCheckbox1Valid;
   }
 
   function validateEmail(email) {
