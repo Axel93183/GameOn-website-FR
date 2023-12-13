@@ -42,6 +42,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Appelle la fonction de validation du formulaire
     if (validateForm()) {
       console.log("Formulaire valide. Données envoyées.");
+      const validationMessageElement = document.createElement("p");
+      validationMessageElement.textContent = "Félicitations, votre inscription a été validé avec succès !!!"
+      form.appendChild(validationMessageElement);
     } else {
       console.log("Le formulaire n'est pas valide. Veuillez corriger les erreurs.");
       // Les données du formulaire ne sont pas effacées ici, ce qui permet à l'utilisateur de les corriger sans perdre les saisies.
