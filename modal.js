@@ -1,11 +1,30 @@
-function editNav() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+// function editNav() {
+//   var x = document.getElementById("myTopnav");
+//   if (x.className === "topnav") {
+//     x.className += " responsive";
+//   } else {
+//     x.className = "topnav";
+//   }
+// }
+
+const toggleNavButton = document.getElementById("toggleNavButton");
+
+// Ajoute un écouteur d'événements pour le clic sur le bouton de bascule
+toggleNavButton.addEventListener("click", function () {
+// Récupère l'élément de la barre de navigation par son ID
+  const navigation = document.getElementById("myTopnav");
+
+   // Vérifie si la classe actuelle est "main-navbar topnav"
+  if (navigation.className === "main-navbar") {
+     // Ajoute la classe "responsive" si elle n'est pas présente
+    navigation.className += " responsive";
   } else {
-    x.className = "topnav";
+   // Sinon, replace la classe "main-navbar"
+    navigation.className = "main-navbar";
   }
-}
+});
+
+
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
@@ -96,9 +115,9 @@ document.addEventListener("DOMContentLoaded", function () {
     displayError(form.last, "Le champ Nom doit avoir au moins 2 caractères.", isLastNameValid);
     displayError(form.email, "Veuillez saisir une adresse e-mail valide.", isEmailValid);
     displayError(form.birthdate, "Veuillez saisir votre date de naissance.", isBirthdateValid);
-    displayError(form.quantity, "Veuillez saisir un nombre valide pour le nombre de concours.", isQuantityValid);
+    displayError(form.quantity, "Veuillez saisir un nombre valide de concours (99 max).", isQuantityValid);
     displayError(form.querySelector(".location"), "Veuillez sélectionner une ville.", isLocationValid);
-    displayError(form.checkbox1, "Veuillez accepter les conditions d'utilisation.", isCheckbox1Valid);
+    displayError(form.checkbox1, "Veuillez lire et accepter les conditions d'utilisation.", isCheckbox1Valid);
 
     // Retourne true si toutes les conditions sont remplies, sinon false
     return isFirstNameValid && isLastNameValid && isEmailValid && isBirthdateValid && isQuantityValid && isLocationValid && isCheckbox1Valid;
