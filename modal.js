@@ -15,7 +15,8 @@ toggleNavButton.addEventListener("click", function () {
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
-const btnCloseModal = document.querySelector(".close");
+const crossCloseModal = document.querySelectorAll(".close");
+const btnCloseModal = document.querySelector(".btn-close");
 const form = document.forms.reserve;
 
 // launch modal form
@@ -31,7 +32,10 @@ function closeModal() {
 // launch modal event
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// close modal event
+// close modal event with cross
+crossCloseModal.forEach((btn) => btn.addEventListener("click", closeModal));
+
+// close modal event with button
 btnCloseModal.addEventListener("click", closeModal);
 
 function validateEmail(email) {
@@ -93,16 +97,8 @@ function validateForm() {
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const existingValidationMessage = document.querySelector(".validation-message");
-
   if (validateForm()) {
-    if (!existingValidationMessage) {
-      const validationMessageElement = document.createElement("p");
-      validationMessageElement.className = "validation-message";
-      validationMessageElement.textContent = "Félicitations, votre inscription a été validée avec succès !!!";
-      form.appendChild(validationMessageElement);
-    }
-  } else {
-    existingValidationMessage.remove();
+    const validationMessage = document.querySelector(".content-validate")
+    validationMessage.style.display = "flex" 
   }
 });
