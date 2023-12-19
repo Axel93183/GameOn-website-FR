@@ -11,14 +11,16 @@
 /* Landing Page */
 
 body {
-  margin: 0;
+  margin: 0 100px;
   display: flex;
   flex-direction: column;
   background-image: url("background.png");
   font-family: var(--font-default);
   font-size: 18px;
-  max-width: 1300px;
-  margin: 0 auto;
+  min-height: 100vh;
+  /* max-width: 1300px; */
+  /* width: 100vw; */
+  /* margin: 0 auto; */
 }
 
 p {
@@ -26,13 +28,9 @@ p {
   padding: 0.5vw;
 }
 
-img {
-  padding-right: 1rem;
-}
-
 .header {
   overflow: hidden;
-  margin: 3.5%;
+  margin: 4.25% 0;
 }
 .header-logo {
   float: left;
@@ -56,22 +54,11 @@ nav a:hover {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
+  text-decoration: underline;
 }
 
 nav .icon {
   display: none;
-}
-
-main {
-  font-size: 130%;
-  font-weight: bolder;
-  color: black;
-  padding-top: 0.5vw;
-  padding-left: 2vw;
-  padding-right: 2vw;
-  margin: 1px 20px 15px;
-  border-radius: 2rem;
-  text-align: justify;
 }
 
 .modal-btn {
@@ -91,8 +78,8 @@ main {
 }
 
 .footer {
-  margin: 20px;
-  padding: 10px;
+  /* margin: 20px; */
+  /* padding: 10px; */
   font-family: var(--font-slab);
 }
 
@@ -146,7 +133,7 @@ main {
   display: none;
   flex-direction: column;
   align-items: center;
-  justify-content:flex-end ;
+  justify-content: flex-end;
   position: absolute;
   left: 0;
   top: 0;
@@ -156,9 +143,10 @@ main {
   height: 100%;
   background: #232323;
   animation-name: modalopen;
-  animation-duration: var(--modal-duration);}
+  animation-duration: var(--modal-duration);
+}
 
-.success-message{
+.success-message {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -166,15 +154,15 @@ main {
   height: 60%;
 }
 
-.success-message > p{
+.success-message > p {
   padding: 0 110px;
-  color: #FFF;
+  color: #fff;
 
-text-align: center;
-font-family: DM Sans;
-font-size: 36px;
-font-style: normal;
-font-weight: 400;
+  text-align: center;
+  font-family: DM Sans;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .modal-body {
@@ -411,64 +399,57 @@ input[data-error]::after {
   font-size: 16px;
 }
 .hero-section {
-  min-height: 93vh;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  overflow: hidden;
-  box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
+  display: flex;
+  box-shadow: 0 12px 12px 0px rgba(0, 0, 0, 0.25);
 }
 .hero-content {
-  padding: 51px 67px;
-  grid-column: span 4;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 73px;
+  padding: 56px 0 70px 56px;
   background: #232323;
   color: #fff;
-  position: relative;
-  text-align: left;
-  min-width: 424px;
-}
-.hero-content::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: #232323;
-  position: absolute;
-  right: -80px;
-  top: 0;
-}
-.hero-content > * {
-  position: relative;
   z-index: 1;
+  border-radius: 8px 0 0 8px;
 }
 .hero-headline {
-  font-size: 6rem;
-  font-weight: normal;
+  font-size: 6.67vw; /* 96px / 1440px * 100 */
+  font-weight: 500;
+  font-style: normal;
   white-space: nowrap;
 }
 .hero-text {
-  width: 146%;
-  font-weight: normal;
-  margin-top: 57px;
-  padding: 0;
+  padding: 0 3.89vw 0 0; /* 56px / 1440px * 100 */
+  font-size: 1.67vw; /* 24px / 1440px * 100 */
+  font-weight: 400;
 }
 .btn-signup {
-  outline: none;
   text-transform: capitalize;
-  font-size: 1.3rem;
-  padding: 15px 23px;
+  padding: 1.1vh 2.08vw;
   margin: 0;
-  margin-top: 59px;
+  color: #fff;
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.67vw; /* 24px / 1440px * 100 */
 }
+
 .hero-img {
-  grid-column: span 8;
+  width: 60%;
+  overflow: hidden;
+  border-radius: 0 8px 8px 0;
+  position: relative;
 }
 .hero-img img {
   width: 100%;
   height: 100%;
   display: block;
-  padding: 0;
+  object-fit: cover;
 }
+
 .copyrights {
   color: #fe142f;
   padding: 0;
