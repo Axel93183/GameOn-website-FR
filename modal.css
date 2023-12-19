@@ -58,39 +58,7 @@ nav .icon {
   display: none;
 }
 
-.modal-btn {
-  font-size: 145%;
-  background: #fe142f;
-  display: flex;
-  margin: auto;
-  padding: 2em;
-  color: #fff;
-  padding: 0.75rem 2.5rem;
-  border-radius: 1rem;
-  cursor: pointer;
-}
-
-.modal-btn:hover {
-  background: #3876ac;
-}
-
-
-
 /* Modal form */
-
-.button {
-  background: #fe142f;
-  margin-top: 0.5em;
-  padding: 1em;
-  color: #fff;
-  border-radius: 15px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.button:hover {
-  background: #3876ac;
-}
 
 .smFont {
   font-size: 16px;
@@ -302,18 +270,35 @@ input[data-error]::after {
 .close:after {
   transform: rotate(-45deg);
 }
-.btn-submit,
 .btn-signup,
+.btn-submit,
 .btn-close {
-  background: #fe142f;
+  cursor: pointer;
   display: block;
-  margin: 0 auto;
-  border-radius: 7px;
+  background: #fe142f;
+  color: #fff;
   font-size: 1rem;
   padding: 12px 82px;
-  color: #fff;
-  cursor: pointer;
   border: 0;
+  border-radius: 8px;
+}
+
+.btn-signup:hover,
+.btn-submit:hover,
+.btn-close:hover {
+  background: #3876ac;
+}
+
+.btn-signup {
+  margin: 0;
+  text-transform: capitalize;
+  padding: 1.1vh 2.08vw;
+  font-family: "DM Sans";
+  font-size: 1.67vw; /* 24px / 1440px * 100 */
+}
+
+.btn-submit {
+  margin: 0.5em auto;
 }
 
 .btn-close {
@@ -418,16 +403,6 @@ input[data-error]::after {
   padding: 0 3.89vw 0 0; /* 56px / 1440px * 100 */
   font-size: 1.67vw; /* 24px / 1440px * 100 */
   font-weight: 400;
-}
-.btn-signup {
-  text-transform: capitalize;
-  padding: 1.1vh 2.08vw;
-  margin: 0;
-  color: #fff;
-  font-family: "DM Sans";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.67vw; /* 24px / 1440px * 100 */
 }
 
 .hero-img {

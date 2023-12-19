@@ -13,7 +13,7 @@ toggleNavButton.addEventListener("click", function () {
 
 // DOM Elements
 const modalbg = document.querySelector(".bground");
-const modalBtn = document.querySelectorAll(".modal-btn");
+const btnSignup = document.querySelectorAll(".btn-signup");
 const formData = document.querySelectorAll(".formData");
 const crossCloseModal = document.querySelectorAll(".close");
 const btnCloseModal = document.querySelector(".btn-close");
@@ -30,7 +30,7 @@ function closeModal() {
 }
 
 // launch modal event
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+btnSignup.forEach((btn) => btn.addEventListener("click", launchModal));
 
 // close modal event with cross
 crossCloseModal.forEach((btn) => btn.addEventListener("click", closeModal));
@@ -99,6 +99,6 @@ form.addEventListener("submit", function (event) {
 
   if (validateForm()) {
     const validationMessage = document.querySelector(".content-validate")
-    validationMessage.style.display = "flex" 
+    validationMessage.style.display = "flex"
   }
 });
