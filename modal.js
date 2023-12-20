@@ -1,13 +1,22 @@
 const toggleNavButton = document.getElementById("toggleNavButton");
+const navigation = document.getElementById("myTopnav");
+const crossCloseNavigation = document.querySelector(".cross-navclose")
 
-// event listener for toggle button clicks
+// event listener for navigation button open
 toggleNavButton.addEventListener("click", function () {
-  const navigation = document.getElementById("myTopnav");
+  if (navigation.classList.contains("main-navbar")) {
+    navigation.classList.add("navopen");
+    toggleNavButton.style.display = "none";
+    crossCloseNavigation.style.display = "block";
+  }
+});
 
-  if (navigation.className === "main-navbar") {
-    navigation.className += " responsive";
-  } else {
-    navigation.className = "main-navbar";
+// event listener for navigation cross close
+crossCloseNavigation.addEventListener("click", function () {
+  if (navigation.classList.contains("navopen")) {
+    navigation.classList.remove("navopen")
+    toggleNavButton.style.display = "block";
+    crossCloseNavigation.style.display = "none";
   }
 });
 
