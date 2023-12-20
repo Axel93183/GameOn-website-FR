@@ -504,7 +504,7 @@ input[data-error]::after {
 
   nav a {
     display: none;
-    padding: 0;
+    padding: 12px;
   }
 
   nav a:hover {
@@ -520,18 +520,20 @@ input[data-error]::after {
 
   .navopen {
     position: absolute;
-    z-index: 1;
-    width: 50%;
-    display: flex;
+    z-index: 99;
+    width: 60%;
     flex-direction: column;
     align-items: center;
     right: 30px;
-    background-color: #fff;
+    margin: 25px;
+    background-color: #3876ac;
+    border-radius: 8px;
     animation: navopen 0.8s ease;
   }
 
   .navopen a {
     display: block;
+    color: #fff;
   }
 
   .navopen a:hover {
@@ -552,12 +554,12 @@ input[data-error]::after {
   .cross-navclose:before,
   .cross-navclose:after {
     position: absolute;
-    right: 0;
-    top: 50px;
+    right: 20px;
+    top: 120px;
     content: " ";
     height: 29px;
     width: 3px;
-    background-color: #fe142f;
+    background-color: #fff;
   }
   .cross-navclose:before {
     transform: rotate(45deg);
@@ -570,6 +572,7 @@ input[data-error]::after {
     flex-direction: column;
     width: 100%;
     box-shadow: unset;
+    z-index: 0;
   }
   .hero-content {
     background: #fff;
@@ -641,9 +644,11 @@ input[data-error]::after {
 
 @keyframes navopen {
   from {
+    opacity: 0;
     transform: translateY(-150px);
   }
   to {
+    opacity: 1;
     transform: translateY(0);
   }
 }
