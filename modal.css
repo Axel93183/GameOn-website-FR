@@ -70,7 +70,7 @@ nav .icon {
   font-size: 16px;
 }
 
-.bground {
+.pop-up-modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -255,6 +255,7 @@ input {
   cursor: pointer;
   transform: scale(0.7);
 }
+
 .close:before,
 .close:after {
   position: absolute;
@@ -451,6 +452,7 @@ input {
     font-size: 19px;
   }
 }
+
 @media screen and (max-width: 992px) {
   body {
     margin: 0 40px;
@@ -460,6 +462,10 @@ input {
     padding: 6px;
     margin: 2px;
     font-size: 1rem;
+  }
+
+  .hero-headline {
+    font-size: 4.5rem;
   }
 }
 
@@ -580,12 +586,21 @@ input {
     width: 100%;
     padding: 0;
   }
+
   .hero-content::after {
     content: unset;
   }
+
   .hero-content .btn-signup {
-    display: none;
+    display: block;
+    display: flex;
+    margin: 25px auto 0;
+    padding: 12px 35px;
+    font-size: 0.78rem;
+    height: 1.67rem;
+    align-items: center;
   }
+
   .hero-headline {
     font-size: 2.22rem;
     white-space: initial;
@@ -605,14 +620,6 @@ input {
   .hero-img img {
     border-radius: 10px;
   }
-  .hero-section > .btn-signup {
-    display: flex;
-    margin: 25px auto 0;
-    padding: 12px 35px;
-    font-size: 0.78rem;
-    height: 1.67rem;
-    align-items: center;
-  }
 
   footer {
     margin: 10px auto 0;
@@ -625,9 +632,6 @@ input {
     text-align: center;
     font-size: 10px;
   }
-}
-
-@media screen and (max-width: 600px) {
 }
 
 @keyframes modalopen {

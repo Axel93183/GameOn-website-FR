@@ -1,3 +1,15 @@
+// DOM Elements
+const modal = document.querySelector(".pop-up-modal");
+const body = document.getElementById("body");
+const formData = document.querySelectorAll(".formData");
+const crossCloseModal = document.querySelectorAll(".close");
+const btnCloseModal = document.querySelector(".btn-close");
+const heroSection = document.querySelector('.hero-section');
+const heroContent = document.querySelector('.hero-content');
+const heroImg = document.querySelector('.hero-img');
+const heroText = document.querySelector('.hero-text');
+const btnSignup = document.querySelector('.btn-signup');
+const form = document.forms.reserve;
 const toggleNavButton = document.getElementById("toggleNavButton");
 const navigation = document.getElementById("myTopnav");
 const crossCloseNavigation = document.querySelector(".cross-navclose")
@@ -11,6 +23,22 @@ toggleNavButton.addEventListener("click", function () {
   }
 });
 
+// insert the .hero-img div between the p and the button when resizing the screen
+function insertHeroImg() {
+  if (window.innerWidth <= 768) {
+    if (!heroContent.contains(heroImg)) {
+      heroContent.insertBefore(heroImg, btnSignup);
+    }
+  } else {
+    if (!heroSection.appendChild(heroImg)) {
+      heroSection.appendChild(heroImg);
+    }
+  }
+}
+
+// event listener for screen resizing
+window.addEventListener('resize', insertHeroImg);
+
 // event listener for navigation cross close
 crossCloseNavigation.addEventListener("click", function () {
   if (navigation.classList.contains("navopen")) {
@@ -20,26 +48,20 @@ crossCloseNavigation.addEventListener("click", function () {
   }
 });
 
-// DOM Elements
-const modalbg = document.querySelector(".bground");
-const btnSignup = document.querySelectorAll(".btn-signup");
-const formData = document.querySelectorAll(".formData");
-const crossCloseModal = document.querySelectorAll(".close");
-const btnCloseModal = document.querySelector(".btn-close");
-const form = document.forms.reserve;
-
 // launch modal form
 function launchModal() {
-  modalbg.style.display = "block";
+  modal.style.display = "block";
+  body.style.overflow = "hidden";
 }
 
 // close modal form
 function closeModal() {
-  modalbg.style.display = "none";
+  modal.style.display = "none";
+  body.style.overflow = "initial";
 }
 
 // launch modal event
-btnSignup.forEach((btn) => btn.addEventListener("click", launchModal));
+btnSignup.addEventListener("click", launchModal);
 
 // close modal event with cross
 crossCloseModal.forEach((btn) => btn.addEventListener("click", closeModal));
