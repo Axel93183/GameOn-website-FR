@@ -4,15 +4,12 @@ const body = document.getElementById("body");
 const formData = document.querySelectorAll(".formData");
 const crossCloseModal = document.querySelectorAll(".close");
 const btnCloseModal = document.querySelector(".btn-close");
-const heroSection = document.querySelector('.hero-section');
-const heroContent = document.querySelector('.hero-content');
-const heroImg = document.querySelector('.hero-img');
-const heroText = document.querySelector('.hero-text');
 const btnSignup = document.querySelector('.btn-signup');
 const form = document.forms.reserve;
 const toggleNavButton = document.getElementById("toggleNavButton");
 const navigation = document.getElementById("myTopnav");
-const crossCloseNavigation = document.querySelector(".cross-navclose")
+const crossCloseNavigation = document.querySelector(".cross-navclose");
+const validationMessage = document.querySelector(".content-validate");
 
 // event listener for navigation button open
 toggleNavButton.addEventListener("click", function () {
@@ -23,22 +20,6 @@ toggleNavButton.addEventListener("click", function () {
   }
 });
 
-// insert the .hero-img div between the p and the button when resizing the screen
-function insertHeroImg() {
-  if (window.innerWidth <= 768) {
-    if (!heroContent.contains(heroImg)) {
-      heroContent.insertBefore(heroImg, btnSignup);
-    }
-  } else {
-    if (!heroSection.appendChild(heroImg)) {
-      heroSection.appendChild(heroImg);
-    }
-  }
-}
-
-// event listener for screen resizing
-window.addEventListener('resize', insertHeroImg);
-
 // event listener for navigation cross close
 crossCloseNavigation.addEventListener("click", function () {
   if (navigation.classList.contains("navopen")) {
@@ -48,20 +29,18 @@ crossCloseNavigation.addEventListener("click", function () {
   }
 });
 
-// launch modal form
-function launchModal() {
+// launch modal event
+btnSignup.addEventListener("click", function () {
   modal.style.display = "block";
   body.style.overflow = "hidden";
-}
+});
 
 // close modal form
 function closeModal() {
   modal.style.display = "none";
   body.style.overflow = "initial";
+  validationMessage.style.display = "none"
 }
-
-// launch modal event
-btnSignup.addEventListener("click", launchModal);
 
 // close modal event with cross
 crossCloseModal.forEach((btn) => btn.addEventListener("click", closeModal));
@@ -91,7 +70,7 @@ function validateForm() {
   const isLastNameValid = lastName.length >= 2 && !lastName == "";
   const isEmailValid = validateEmail(email);
   const isBirthdateValid = !isNaN(Date.parse(birthdate)) && Date.parse(birthdate) <= currentDate.getTime();
-  const isQuantityValid = !isNaN(quantity) && quantity >= 0 && !quantity == "";
+  const isQuantityValid = !isNaN(quantity) && quantity >= 0 && quantity <= 99 && !quantity == "";
   const isLocationValid = location !== null;
   const isCheckTermsValid = checkTerms.checked;
 
@@ -129,7 +108,6 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   if (validateForm()) {
-    const validationMessage = document.querySelector(".content-validate")
     validationMessage.style.display = "flex"
   }
 });

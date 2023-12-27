@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="modal.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
+  <script src="modal.js" defer></script>
 </head>
 
 <body id="body">
@@ -28,21 +29,21 @@
   </header>
   <main id="main">
     <section class="hero-section">
-      <div class="hero-content">
-        <h1 class="hero-headline">
-          Marathon national<br>
-          de jeux vidéos
-        </h1>
-        <p class="hero-text">
-          Vous aimez jouer ? Notre prochain évènement gaming est ouvert
-          aux réservations... Places limitées !
-        </p>
+      <h1 class="hero-headline">
+        Marathon national<br>
+        de jeux vidéos
+      </h1>
+      <p class="hero-text">
+        Vous aimez jouer ? Notre prochain évènement gaming est ouvert
+        aux réservations... Places limitées !
+      </p>
+      <div class="hero-img">
+        <img src="./bg_img.jpg" alt="image d'une joueuse de jeux vidéo levant ses bras" />
+      </div>
+      <div class="btn">
         <button class="btn-signup">
           <span>je m'inscris</span>
         </button>
-      </div>
-      <div class="hero-img">
-        <img src="./bg_img.jpg" alt="img" />
       </div>
     </section>
 
@@ -108,7 +109,7 @@
             </div>
 
             <div class="formData">
-              <input class="checkbox-input" type="checkbox" id="checkbox1" name="checkbox1" />
+              <input class="checkbox-input" type="checkbox" id="checkbox1" name="checkbox1" required />
               <label class="checkbox2-label" for="checkbox1">
                 <span class="checkbox-icon"></span>
                 J'ai lu et accepté les conditions d'utilisation.
@@ -132,7 +133,6 @@
       Copyright 2014 - 2023, GameOn Inc.
     </p>
   </footer>
-  <script src="modal.js" defer></script>
 </body>
 
 </html>
