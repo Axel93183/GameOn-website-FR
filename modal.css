@@ -19,11 +19,6 @@ body {
   min-height: 100vh;
 }
 
-p {
-  margin-bottom: 0;
-  padding: 0.5vw;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
@@ -135,14 +130,17 @@ nav .icon {
   padding: 15px 8%;
   margin: 15px auto;
 }
-
+.formData {
+  margin-bottom: 11px;
+}
 label {
   font-family: var(--font-default);
   font-size: 17px;
   font-weight: normal;
   display: inline-block;
-  margin-bottom: 11px;
+  margin-bottom: 17px;
 }
+
 input {
   padding: 8px;
   border: 0.8px solid #ccc;
@@ -160,6 +158,7 @@ input {
 .error-message {
   font-size: 0.83rem;
   color: #e54858;
+  margin-top: 3px;
 }
 
 .formData[data-error]::after {
@@ -376,7 +375,9 @@ input {
 .text-label {
   font-weight: normal;
   font-size: 16px;
+  margin-bottom: 12px;
 }
+
 .hero-section {
   width: 100%;
   padding: 56px 0 70px 56px;
@@ -616,6 +617,24 @@ input {
     border-radius: 10px;
   }
 
+  .pop-up-modal {
+    background-color: initial;
+  }
+
+  .content {
+    margin: auto;
+    margin-top: 90px;
+    padding: 0;
+    max-width: 100%;
+    bottom: 0;
+  }
+
+  label,
+  .text-label {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+
   footer {
     margin: 0 auto;
     padding: 0;
@@ -627,6 +646,12 @@ input {
     margin-bottom: 0;
     text-align: center;
     font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 466px) {
+  .content {
+    margin-top: 80px;
   }
 }
 

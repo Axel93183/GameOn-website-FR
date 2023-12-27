@@ -31,6 +31,7 @@ crossCloseNavigation.addEventListener("click", function () {
 
 // launch modal event
 btnSignup.addEventListener("click", function () {
+  document.documentElement.scrollTop = 0;
   modal.style.display = "block";
   body.style.overflow = "hidden";
 });
