@@ -29,12 +29,15 @@ crossCloseNavigation.addEventListener("click", function () {
   }
 });
 
-// launch modal event
-btnSignup.addEventListener("click", function () {
+// open modal form
+function openModal() {
   document.documentElement.scrollTop = 0;
   modal.style.display = "block";
   body.style.overflow = "hidden";
-});
+}
+
+// launch modal event
+btnSignup.addEventListener("click", openModal);
 
 // close modal form
 function closeModal() {
@@ -110,5 +113,23 @@ form.addEventListener("submit", function (event) {
 
   if (validateForm()) {
     validationMessage.style.display = "flex"
+
+    const firstInput = form.first;
+    const lastInput = form.last;
+    const emailInput = form.email;
+    const birthdateInput = form.birthdate;
+    const quantityInput = form.quantity;
+    const locationInput = form.querySelector('input[name="location"]:checked');
+    const termsInput = form.checkbox1;
+    const eventsInput = form.checkbox2;
+
+    firstInput.value = "";
+    lastInput.value = "";
+    emailInput.value = "";
+    birthdateInput.value = "";
+    quantityInput.value = "";
+    locationInput.checked = false;
+    termsInput.checked = false;
+    eventsInput.checked = false;
   }
 });
