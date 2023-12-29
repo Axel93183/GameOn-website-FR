@@ -217,9 +217,27 @@ input {
   transition: 0.3s;
   opacity: 0;
 }
-.checkbox-input {
-  display: none;
+
+.choice-location {
+  display: flex;
+  flex-wrap: wrap;
 }
+
+.location-input {
+  position: relative;
+}
+
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  top: 35%;
+  left: 10px;
+}
+
+.terms-choice {
+  position: relative;
+}
+
 .checkbox-input:checked + .checkbox-label .checkbox-icon::after,
 .checkbox-input:checked + .checkbox2-label .checkbox-icon::after {
   opacity: 1;
